@@ -12,6 +12,19 @@ npm run dev
 
 Open `http://127.0.0.1:4173`. Run `npm run check` for JavaScript syntax validation. Static hosting serves the `dist/` directory. Hash-based routes support direct links without server rewrites.
 
+## Netlify
+
+Live demo: [artsy-fartsy-creative-lab-demo.netlify.app](https://artsy-fartsy-creative-lab-demo.netlify.app).
+
+This is a manual static deploy to the systemsAI team. `netlify.toml` publishes `dist` and runs the existing syntax check for future Netlify builds. Local `.netlify/` linking state is ignored by Git. Git-triggered automatic deployments have not been configured.
+
+To publish an updated checked demo using an authenticated Netlify CLI:
+
+```sh
+npm run check
+netlify deploy --site ee458b3d-f9df-423c-8e2f-e7e3b489b7cc --prod --dir dist --no-build
+```
+
 ## Demo scope
 
 - Children/adult class filters, class details and sample class-interest confirmations.
