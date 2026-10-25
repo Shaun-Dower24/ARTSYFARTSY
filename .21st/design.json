@@ -28,7 +28,7 @@
   },
   "constraints": {
     "must": [
-      "Preserve supplied studio palette and serif/sans pairing",
+      "Preserve supplied studio palette, serif brand signature, bold sans editorial headings and compact mono metadata",
       "Keep Donate visible",
       "Keep all six required visitor routes discoverable",
       "Mark sample schedules/prices/photography",
@@ -52,11 +52,17 @@
     },
     {
       "id": "artsy-brand-and-demo-scope",
-      "decision": "Preserve the forest/teal, coral, yellow, mint and peach tokens in dist/styles.css, DM Serif Display headings and DM Sans body. Keep all programs illustrative and every form/payment outcome local-only.",
+      "decision": "Preserve the forest/teal, coral, yellow, mint and peach tokens in dist/styles.css, DM Serif Display brand signature and DM Sans editorial/body typography. Keep all programs illustrative and every form/payment outcome local-only.",
       "createdAt": "2026-10-25",
       "source": "Website-Design-UX-Checklist.md"
+    },
+    {
+      "id": "noart-visual-layout",
+      "decision": "Apply the user's requested No Art visual layout inspiration: full-viewport photographic hero, centered expressive brand signature, corner metadata, asymmetrical oversized editorial introduction, flat numbered image rows, a dominant circular studio feature, original gathering posters and a thin framed footer. Use original Artsy Fartsy content and the studio palette. Retain accessible route navigation and static photography rather than autoplay video.",
+      "createdAt": "2026-10-25",
+      "source": "https://www.noartmusic.com/"
     }
   ],
   "evidence": [],
-  "generatedAt": "2026-10-25T11:17:58.031Z"
+  "generatedAt": "2026-10-25T12:51:17.176Z"
 }

@@ -6,6 +6,11 @@ const primaryNav = document.querySelector('#primary-nav');
 const menuDialog = document.querySelector('#navigation-sheet');
 const announcer = document.querySelector('#route-announcement');
 const arrow = '<span aria-hidden="true">↗</span>';
+const homeSectionIds = ['main-content', 'ways-to-create', 'studio-intro', 'featured-classes', 'gatherings', 'studio-gallery'];
+
+function updateScrollState() {
+  document.body.classList.toggle('is-scrolled', window.scrollY > 60);
+}
 
 const classes = [
   { id: 'color', name: 'Little Color Explorers', audience: 'children', age: 'Ages 5–8', day: 'Saturday', time: '10:00 AM', duration: '60 minutes', price: 28, image: 'kids.jpg', alt: 'An illustrative children’s art activity', medium: 'Paint, play & possibility', description: 'Big ideas start with little experiments. Explore color, make playful marks, and enjoy the lovely surprise of making something your own.', materials: 'Paper, paint and creative tools', note: 'Parent / guardian participation and supervision arrangements will be confirmed before real registration opens.' },
@@ -24,10 +29,11 @@ function breadcrumb(label, parent = 'Home', parentRoute = '#home') {
   return `<nav class="breadcrumb" aria-label="Breadcrumb"><a href="${parentRoute}">${parent}</a><span aria-hidden="true">/</span><span aria-current="page">${label}</span></nav>`;
 }
 
-function classCard(item, context = 'listing') {
+function classCard(item, context = 'listing', sequence = null) {
   const heading = context === 'home' ? 'h3' : 'h2';
   const titleId = `${context}-class-title-${item.id}`;
-  return `<article class="class-card"><a href="#class/${item.id}" class="class-card-link" aria-labelledby="${titleId}"><div class="class-image"><img src="assets/${item.image}" alt="${item.alt}" width="800" height="600" loading="lazy"><span class="image-label class-badge">${item.age}</span></div><div class="class-card-body"><div class="class-meta"><span>${item.audience === 'children' ? 'LITTLE MAKERS' : 'GROWN-UP CREATIVITY'}</span><span>SAMPLE CLASS</span></div><${heading} class="class-title" id="${titleId}">${item.name}</${heading}><p>${item.medium}</p><dl class="class-facts"><div><dt>Who</dt><dd>${item.age}</dd></div><div><dt>Sample session</dt><dd>${item.day} · ${item.time}</dd></div><div><dt>Duration</dt><dd>${item.duration}</dd></div><div><dt>Sample price</dt><dd>$${item.price} / person</dd></div></dl><span class="text-link">Explore this class ${arrow}</span></div></a></article>`;
+  const sequenceMarkup = context === 'home' && sequence ? `<span class="class-sequence" aria-hidden="true">[${String(sequence).padStart(2, '0')}]</span>` : '';
+  return `<article class="class-card"><a href="#class/${item.id}" class="class-card-link" aria-labelledby="${titleId}"><div class="class-image"><img src="assets/${item.image}" alt="${item.alt}" width="800" height="600" loading="lazy"><span class="image-label class-badge">${item.age}</span></div><div class="class-card-body">${sequenceMarkup}<div class="class-meta"><span>${item.audience === 'children' ? 'LITTLE MAKERS' : 'GROWN-UP CREATIVITY'}</span><span>SAMPLE CLASS</span></div><${heading} class="class-title" id="${titleId}">${item.name}</${heading}><p>${item.medium}</p><dl class="class-facts"><div><dt>Who</dt><dd>${item.age}</dd></div><div><dt>Sample session</dt><dd>${item.day} · ${item.time}</dd></div><div><dt>Duration</dt><dd>${item.duration}</dd></div><div><dt>Sample price</dt><dd>$${item.price} / person</dd></div></dl><span class="text-link">Explore this class ${arrow}</span></div></a></article>`;
 }
 
 function classesPage(audience = 'all') {
@@ -95,7 +101,7 @@ function closeDropdowns(except = null) {
 
 function renderRoute(moveFocus = true) {
   const fragment = (location.hash.slice(1) || 'home').replace(/\/$/, '');
-  const inPageId = ['main-content', 'ways-to-create'].includes(fragment) ? fragment : null;
+  const inPageId = homeSectionIds.includes(fragment) ? fragment : null;
   const route = inPageId ? 'home' : fragment;
   let title = 'Creative classes, parties & possibilities';
   let markup = '';
@@ -116,6 +122,8 @@ function renderRoute(moveFocus = true) {
   } else if (route === 'donate') { markup = donatePage(); title = 'Donate'; }
 
   const isHome = route === 'home';
+  document.body.dataset.view = isHome ? 'home' : 'page';
+  document.body.dataset.route = route;
   if (!isHome && !markup) {
     title = 'Page not found';
     markup = '<section class="page-hero section-shell"><p class="eyebrow">A LITTLE DETOUR</p><h1 class="display-title" tabindex="-1">Let’s find<br>your way back.</h1><p class="body-copy">This page isn’t part of the demo, but there’s plenty to explore.</p><a href="#home" class="btn btn-dark">Back to home ↗</a></section>';
@@ -137,6 +145,7 @@ function renderRoute(moveFocus = true) {
   });
   if (moveFocus) {
     window.scrollTo({ top: 0, behavior: 'instant' });
+    updateScrollState();
     const heading = (isHome ? homeView : pageView).querySelector('h1');
     heading?.setAttribute('tabindex', '-1');
     heading?.focus({ preventScroll: true });
@@ -147,6 +156,7 @@ function renderRoute(moveFocus = true) {
     target?.setAttribute('tabindex', '-1');
     target?.focus({ preventScroll: true });
     target?.scrollIntoView({ behavior: 'instant', block: 'start' });
+    updateScrollState();
   });
 }
 
@@ -208,13 +218,19 @@ document.addEventListener('click', event => {
   if (target.closest('[data-close-menu]')) { closeMenu(true); return; }
   if (target.closest('#navigation-sheet a')) closeMenu(false);
   if (target.closest('#primary-nav a') || !target.closest('.nav-dropdown')) closeDropdowns();
-  const inPageLink = target.closest('a[href="#main-content"], a[href="#ways-to-create"]');
-  if (inPageLink) {
+  const inPageLink = target.closest('a[href^="#"]');
+  const inPageId = inPageLink?.getAttribute('href').slice(1);
+  if (inPageLink && homeSectionIds.includes(inPageId)) {
     event.preventDefault();
-    const section = document.getElementById(inPageLink.getAttribute('href').slice(1));
+    if (inPageId !== 'main-content' && homeView.hidden) {
+      location.hash = inPageId;
+      return;
+    }
+    const section = document.getElementById(inPageId);
     section?.setAttribute('tabindex', '-1');
     section?.focus({ preventScroll: true });
     section?.scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth', block: 'start' });
+    updateScrollState();
     return;
   }
   const currentRouteLink = target.closest('a[href^="#"]');
@@ -331,7 +347,9 @@ document.addEventListener('submit', event => {
 
 document.querySelectorAll('[data-year]').forEach(element => { element.textContent = String(new Date().getFullYear()); });
 const homeCards = document.querySelector('#home-class-cards');
-if (homeCards) homeCards.innerHTML = ['color', 'handbuilding', 'paint'].map(id => classCard(classes.find(item => item.id === id), 'home')).join('');
+if (homeCards) homeCards.innerHTML = ['color', 'handbuilding', 'paint'].map((id, index) => classCard(classes.find(item => item.id === id), 'home', index + 1)).join('');
 syncMenuState();
 window.addEventListener('hashchange', () => renderRoute(true));
+window.addEventListener('scroll', updateScrollState, { passive: true });
 renderRoute(false);
+updateScrollState();

@@ -27,3 +27,14 @@ The accepted 21st shortlist has been adapted into the existing HTML/CSS/JavaScri
 - No browser console errors observed in the checked demo tab.
 
 All confirmations remain local demonstrations. No information is sent or saved; no registration, enquiry, donation, recurring commitment or payment is created. These are focused demo checks, not a complete accessibility conformance assessment or a real-service integration test.
+
+## No Art visual layout pass
+
+Inspected the reference site visually and adapted its page composition: full-screen photographic opening and corner metadata, an expressive central brand signature, large asymmetrical editorial introduction, unboxed numbered class images, an oversized circular feature, original event posters and a thin framed footer. Artsy Fartsy retains its own content, palette and stock assets. The opening photograph is static; no No Art artwork, logo, video or event copy is reused.
+
+- Desktop visual checks at 1265px and mobile frames at 375px and 320px cover the hero, large headings, class routes and navigation. No page overflow or broken images observed in the checked views.
+- Enter the Lab scrolls to and focuses the introduction. The fixed header changes from transparent over the hero to a solid background on scroll and on detail pages.
+- Desktop disclosures open and close with Escape. Mobile route selection closes the native sheet and opens the requested class audience.
+- Children classes → class detail → Back preserves the audience. Long class headings fit the narrow mobile views.
+- Donation custom $35 monthly produces the matching local preview. General contact produces its local confirmation. Existing demo limits remain unchanged.
+- JavaScript syntax checks pass; 21st review reports zero errors and warnings, with nine informational color suggestions. No browser console errors observed in the checked desktop tab.

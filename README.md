@@ -38,6 +38,8 @@ The demo deliberately omits unverified street addresses, hours, contact details,
 
 ## Editing
 
+The current homepage adopts No Art's visual composition more directly: an immersive photo hero, oversized asymmetric editorial text, flat numbered image rows, a circular studio feature, poster-style event links and a framed footer. The Artsy Fartsy palette, copy and brand signature remain original. A static studio photograph supplies the immersive opening without autoplay video.
+
 The approved [21st component shortlist](21st-Component-Review.md) is now adapted into the existing stack: image-led class routes, shared class information cards, grouped navigation, simpler forms, native-radio giving controls and a complete footer directory. These are original HTML/CSS/JavaScript implementations of the selected patterns; no React component package or animation library was added. See [implementation and QA notes](Demo-QA-Notes.md) for the checked flows and limitations.
 
 - `dist/index.html` — homepage, shared header/footer and metadata.

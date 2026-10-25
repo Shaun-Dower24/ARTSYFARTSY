@@ -12,13 +12,12 @@
   <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800;900&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./styles.css">
   <script type="module" src="./app.js"></script>
 </head>
-<body>
+<body data-view="home" class="art-direction-noart">
   <a class="skip-link" href="#main-content">Skip to content</a>
-  <div class="demo-banner">A little preview of what's possible. <span>Demo · sample programs & illustrative photos</span></div>
   <header class="site-header" id="site-header">
     <a href="#home" class="wordmark" aria-label="Artsy Fartsy Creative Laboratory, home">artsy fartsy<span>CREATIVE LABORATORY</span></a>
     <nav id="primary-nav" class="primary-nav" aria-label="Main navigation">
@@ -40,39 +39,54 @@
 
   <main id="main-content">
     <div id="home-view">
-      <section class="hero-v2 section-shell" aria-labelledby="hero-title">
-        <div class="hero-intro">
-          <div><p class="eyebrow"><span class="tiny-square"></span> CARMEL, INDIANA · CURIOUS MINDS WELCOME</p><h1 id="hero-title">A little mess.<br>A lot of<br><em>possibility.</em></h1></div>
-          <div class="hero-intro-copy"><span class="drawn-star" aria-hidden="true">✳</span><p class="hero-description">Art classes for children and adults. <br>Celebrations with a creative twist. <br>A little space to be wonderfully you.</p><div class="hero-actions"><a class="btn btn-dark" href="#classes">Find your class <span aria-hidden="true">↗</span></a><a class="text-link" href="#events">Plan an event <span aria-hidden="true">↗</span></a></div><p class="hero-small-note">NO PERFECT OUTCOMES REQUIRED. JUST CURIOSITY.</p></div>
+      <section class="immersive-hero" aria-labelledby="hero-title">
+        <img class="immersive-photo" src="./assets/pottery.jpg" alt="Hands shaping clay, an illustrative glimpse of the creative process" width="1000" height="667" fetchpriority="high">
+        <div class="hero-shade" aria-hidden="true"></div>
+        <div class="registration-frame" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+        <div class="hero-signature" aria-hidden="true"><span>artsy</span><span>fartsy<span class="signature-dot">.</span></span><small>CREATIVE LABORATORY</small></div>
+        <div class="hero-bottom">
+          <div class="hero-statement"><p class="micro-label"><span class="square"></span> CARMEL, INDIANA</p><h1 id="hero-title">A LITTLE MESS.<br>A LOT OF POSSIBILITY.</h1><p>ART CLASSES FOR CHILDREN & ADULTS.<br>CELEBRATIONS WITH A CREATIVE TWIST.</p></div>
+          <a class="hero-scroll" href="#studio-intro">ENTER THE LAB <span aria-hidden="true">↓</span></a>
+          <a class="hero-next" href="#classes"><img src="./assets/kids.jpg" alt="" width="1000" height="1499"><div><span class="micro-label">YOUR NEXT CREATIVE THING</span><strong>FIND <br>YOUR CLASS.</strong><span>CHILDREN + ADULTS <span aria-hidden="true">↗</span></span></div></a>
         </div>
-        <div class="hero-paths">
-          <a href="#classes/children" class="hero-path path-children" aria-labelledby="hero-children-title"><div class="hero-path-image"><img src="./assets/kids.jpg" alt="A child painting a canvas at a wooden table" width="1000" height="1499" fetchpriority="high"><span class="path-label">FOR LITTLE MAKERS</span></div><div class="hero-path-caption"><div><span class="path-kicker">BIG IDEAS START SMALL</span><h2 id="hero-children-title">Children's classes</h2></div><span class="circle-arrow" aria-hidden="true">↗</span></div></a>
-          <a href="#classes/adults" class="hero-path path-adults" aria-labelledby="hero-adults-title"><div class="hero-path-image"><img src="./assets/pottery.jpg" alt="Hands working with clay on a pottery wheel" width="1000" height="667" fetchpriority="high"><span class="path-label label-yellow">FOR YOUR CREATIVE SIDE</span></div><div class="hero-path-caption"><div><span class="path-kicker">MAKE A LITTLE TIME FOR YOU</span><h2 id="hero-adults-title">Adult classes</h2></div><span class="circle-arrow" aria-hidden="true">↗</span></div></a>
-        </div>
+        <p class="hero-demo">WEBSITE DEMO · ILLUSTRATIVE PHOTOGRAPHY & SAMPLE PROGRAMS</p>
       </section>
 
-      <section id="ways-to-create" class="section-shell occasions-selector" aria-labelledby="occasions-title"><div class="selector-intro"><p class="section-kicker">OR BRING YOUR PEOPLE</p><h2 id="occasions-title">Make an occasion of it.</h2></div><div class="occasion-links"><a href="#events/birthday"><span class="occasion-index">01</span><span>Birthday parties<small>A celebration with a colorful twist</small></span><span aria-hidden="true">↗</span></a><a href="#events/corporate"><span class="occasion-index">02</span><span>Corporate events<small>Fresh ideas, out of the office</small></span><span aria-hidden="true">↗</span></a><a href="#events/private"><span class="occasion-index">03</span><span>Private parties<small>A shared adventure for your group</small></span><span aria-hidden="true">↗</span></a></div></section>
+      <section id="studio-intro" class="editorial-intro" aria-labelledby="intro-title">
+        <div class="editorial-left"><p class="micro-label"><span class="square"></span> THE CREATIVE LAB</p><h2 class="editorial-heading" id="intro-title">GET YOUR<br>HANDS INTO<br>SOMETHING<br>GOOD.</h2></div>
+        <div class="editorial-copy"><p>CLASSES FOR SMALL HANDS AND GROWN-UP IMAGINATIONS. CELEBRATIONS THAT GET A LITTLE CREATIVE. ARTSY FARTSY IS A SPACE TO EXPERIMENT IN CARMEL, INDIANA.</p><p>COME CURIOUS. MAKE SOMETHING. ENJOY THE PROCESS.</p><a class="text-link" href="#about">MORE ABOUT THE LAB <span aria-hidden="true">↗</span></a></div>
+      </section>
 
-      <section class="section-shell home-classes" aria-labelledby="classes-title">
-        <div class="section-heading heading-row"><div><p class="section-kicker">FIND YOUR NEXT LITTLE ADVENTURE</p><h2 id="classes-title">What will you<br><em>try next?</em></h2></div><div><p>Choose your material.<br>Follow your curiosity.</p><a href="#classes" class="text-link">Explore all classes <span aria-hidden="true">↗</span></a></div></div>
-        <p class="sample-caption">Sample classes · session times and prices are illustrative</p>
+      <nav id="ways-to-create" class="offering-index section-shell" aria-label="Find your creative experience"><span class="micro-label">[ EXPLORE ]</span><a href="#classes/children">CHILDREN'S CLASSES <span aria-hidden="true">↗</span></a><a href="#classes/adults">ADULT CLASSES <span aria-hidden="true">↗</span></a><a href="#events/birthday">BIRTHDAYS <span aria-hidden="true">↗</span></a><a href="#events/corporate">CORPORATE <span aria-hidden="true">↗</span></a><a href="#events/private">PRIVATE PARTIES <span aria-hidden="true">↗</span></a></nav>
+
+      <section id="featured-classes" class="section-shell home-classes noart-class-section" aria-labelledby="classes-title">
+        <div class="strip-heading"><h2 id="classes-title"><span class="square" aria-hidden="true"></span> ON THE CREATIVE CALENDAR</h2><a class="text-link" href="#classes">EXPLORE ALL [04] <span aria-hidden="true">↗</span></a></div>
+        <p class="sample-caption">SAMPLE CLASSES · TIMES & PRICES ARE ILLUSTRATIVE</p>
         <div class="class-grid home-class-grid" id="home-class-cards"></div>
       </section>
 
-      <section class="together-v2" aria-labelledby="together-title"><div class="section-shell"><div class="section-heading heading-row"><div><p class="section-kicker">GOOD COMPANY. GREAT POSSIBILITIES.</p><h2 id="together-title">Better <em>made together.</em></h2></div><p>Pick the occasion.<br>We'll start with a little imagination.</p></div><div class="home-event-grid">
-        <a class="gathering-card" href="#events/birthday"><div class="gathering-art gathering-birthday"><span aria-hidden="true">✳</span><span class="gathering-tag">MAKE A WISH</span></div><div class="gathering-body"><span class="section-kicker">01 / BIRTHDAYS</span><h3>A party that's<br>all their own.</h3><p>Turn a birthday into a hands-on creative adventure for the guest of honor and their friends.</p><span class="text-link">Plan a birthday <span aria-hidden="true">↗</span></span></div></a>
-        <a class="gathering-card" href="#events/corporate"><div class="gathering-art gathering-corporate"><span class="gathering-shapes" aria-hidden="true"><i></i><i></i><i></i></span><span class="gathering-tag">THINK OUTSIDE THE LINES</span></div><div class="gathering-body"><span class="section-kicker">02 / TEAM DAYS</span><h3>A fresh canvas<br>for your team.</h3><p>Make space for shared ideas, a new perspective and time together beyond the usual meeting.</p><span class="text-link">Plan a team event <span aria-hidden="true">↗</span></span></div></a>
-        <a class="gathering-card" href="#events/private"><div class="gathering-art gathering-private"><span aria-hidden="true" class="gathering-loop"></span><span class="gathering-tag">YOUR PEOPLE. YOUR OCCASION.</span></div><div class="gathering-body"><span class="section-kicker">03 / PRIVATE GATHERINGS</span><h3>Get together.<br>Make memories.</h3><p>Celebrate a milestone or spend an afternoon creating something with your favorite people.</p><span class="text-link">Plan a private party <span aria-hidden="true">↗</span></span></div></a>
-      </div></div></section>
+      <section id="studio-gallery" class="place-section" aria-labelledby="place-title">
+        <div class="place-heading"><p class="micro-label"><span class="square"></span> OUR LITTLE WORLD</p><h2 class="editorial-heading" id="place-title">SMALL STUDIO.<br>WIDE OPEN<br>POSSIBILITIES.</h2></div>
+        <div class="paint-world" aria-hidden="true"><img src="./assets/painting.jpg" alt="" width="1600" height="1067" loading="lazy"><span class="orbit-line"></span><span class="world-cross cross-one">+</span><span class="world-cross cross-two">+</span></div>
+        <dl class="place-meta"><div><dt>BASED IN</dt><dd>CARMEL, INDIANA</dd></div><div><dt>MADE FOR</dt><dd>CURIOUS PEOPLE</dd></div><div><dt>THE MATERIAL</dt><dd>A LITTLE IMAGINATION</dd></div></dl>
+        <div class="place-copy"><p>A PLACE TO TRY SOMETHING NEW. MAKE A LITTLE TIME FOR YOURSELF. BRING PEOPLE TOGETHER AROUND A CREATIVE TABLE.</p><a class="text-link" href="#visit">VISIT & CONTACT <span aria-hidden="true">↗</span></a></div>
+      </section>
 
-      <section class="section-shell story-section" aria-labelledby="story-title"><div class="story-visual"><img src="./assets/studio.jpg" alt="A workshop table laid out with art materials" width="1000" height="1500" loading="lazy"><span class="story-label">A SPACE TO EXPERIMENT.</span></div><div class="story-copy"><p class="section-kicker">HELLO, WE'RE ARTSY FARTSY</p><h2 id="story-title">A creative lab.<br><em>A place for you.</em></h2><p>Our creative studio in Carmel, Indiana brings together art classes, celebrations and a little room to experiment.</p><ul class="story-points"><li><span>01</span> Find a class for your kind of curiosity.</li><li><span>02</span> Bring your people for a creative occasion.</li><li><span>03</span> Enjoy the process of making something.</li></ul><a href="#about" class="text-link">Get to know the creative lab <span aria-hidden="true">↗</span></a></div></section>
+      <section id="gatherings" class="section-shell gatherings-section" aria-labelledby="gatherings-title">
+        <div class="strip-heading"><h2 id="gatherings-title"><span class="square" aria-hidden="true"></span> MADE TOGETHER</h2><a href="#events" class="text-link">ALL GATHERINGS [03] <span aria-hidden="true">↗</span></a></div>
+        <div class="poster-grid">
+          <a href="#events/birthday" class="occasion-poster"><div class="poster-sheet poster-birthday"><span class="poster-id">[01] / MAKE A WISH</span><span class="poster-star" aria-hidden="true">✳</span><strong>MAKE A<br>BIG WISH.</strong><span class="poster-bottom">A BIRTHDAY WITH A CREATIVE TWIST.</span></div><div class="poster-caption"><h3>BIRTHDAY PARTIES</h3><span aria-hidden="true">↗</span></div><p>FOR THE GUEST OF HONOR & THEIR FAVORITE PEOPLE.</p></a>
+          <a href="#events/corporate" class="occasion-poster"><div class="poster-sheet poster-corporate"><span class="poster-id">[02] / OUT OF OFFICE</span><span class="poster-shapes" aria-hidden="true"><i></i><i></i><i></i></span><strong>TEAM<br>UP.</strong><span class="poster-bottom">SHARED IDEAS. A FRESH PERSPECTIVE.</span></div><div class="poster-caption"><h3>CORPORATE EVENTS</h3><span aria-hidden="true">↗</span></div><p>MAKE ROOM FOR SOMETHING BEYOND THE USUAL MEETING.</p></a>
+          <a href="#events/private" class="occasion-poster"><div class="poster-sheet poster-private"><span class="poster-id">[03] / YOUR PEOPLE</span><span class="poster-rings" aria-hidden="true"></span><strong>GOOD<br>COMPANY.</strong><span class="poster-bottom">YOUR OCCASION. SOMETHING NEW.</span></div><div class="poster-caption"><h3>PRIVATE PARTIES</h3><span aria-hidden="true">↗</span></div><p>CELEBRATE A MILESTONE, OR SIMPLY CREATE TOGETHER.</p></a>
+        </div>
+      </section>
 
-      <section class="support-section" aria-labelledby="support-title"><div class="section-shell support-grid"><div><p class="section-kicker">KEEP THE CREATIVITY FLOWING</p><h2 id="support-title">A little generosity.<br><em>A lot of possibility.</em></h2></div><div class="support-copy"><p>Want to support Artsy Fartsy? Explore a simple giving experience and imagine what we can create together.</p><button class="btn btn-yellow" data-donate>Donate <span aria-hidden="true">↗</span></button><p class="support-note">Demo only · no payment or recurring commitment is created</p></div></div></section>
+      <section class="giving-editorial" aria-labelledby="support-title"><div><p class="micro-label"><span class="square"></span> SUPPORT THE STUDIO</p><h2 class="editorial-heading" id="support-title">MAKE ROOM<br>FOR MORE.</h2></div><div class="giving-copy"><p>WANT TO SUPPORT ARTSY FARTSY? EXPLORE A SIMPLE GIVING EXPERIENCE.</p><button class="btn btn-coral" data-donate>DONATE <span aria-hidden="true">↗</span></button><p class="giving-note">DEMO ONLY. NO PAYMENT OR RECURRING COMMITMENT IS CREATED.</p></div></section>
     </div>
     <div id="page-view" hidden></div>
   </main>
 
-  <footer class="site-footer"><div class="section-shell footer-directory"><div class="footer-brand"><a class="wordmark" href="#home" aria-label="Artsy Fartsy Creative Laboratory, home">artsy fartsy<span>CREATIVE LABORATORY</span></a><p>A little mess.<br>A lot of possibility.</p><span class="footer-city">Carmel, Indiana</span></div><nav aria-label="Explore classes"><h2>Explore</h2><a href="#classes/children">Children's classes</a><a href="#classes/adults">Adult classes</a><a href="#classes">All sample classes</a></nav><nav aria-label="Celebrate"><h2>Celebrate</h2><a href="#events/birthday">Birthday parties</a><a href="#events/corporate">Corporate events</a><a href="#events/private">Private parties</a></nav><nav aria-label="Visit and support"><h2>The studio</h2><a href="#about">Our story</a><a href="#visit">Visit & contact</a><button data-donate>Donate <span aria-hidden="true">↗</span></button></nav></div><div class="section-shell footer-bottom"><span>© <span data-year>2026</span> Artsy Fartsy Creative Laboratory</span><span>Website demo · sample programs & illustrative photography</span></div><div class="color-strip" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span></div></footer>
+  <footer class="site-footer footer-lab"><div class="footer-frame"><div class="footer-directory"><div class="footer-brand"><a class="wordmark" href="#home" aria-label="Artsy Fartsy Creative Laboratory, home">artsy fartsy<span>CREATIVE LABORATORY</span></a><p>CARMEL, INDIANA<br>ART, PEOPLE & POSSIBILITY.</p><span class="footer-city">© <span data-year>2026</span> ARTSY FARTSY</span></div><nav aria-label="Explore classes"><h2>[ CLASSES ]</h2><a href="#classes/children">CHILDREN'S CLASSES</a><a href="#classes/adults">ADULT CLASSES</a><a href="#classes">EXPLORE ALL</a></nav><nav aria-label="Celebrate"><h2>[ GATHERINGS ]</h2><a href="#events/birthday">BIRTHDAY PARTIES</a><a href="#events/corporate">CORPORATE EVENTS</a><a href="#events/private">PRIVATE PARTIES</a></nav><nav aria-label="Visit and support"><h2>[ THE STUDIO ]</h2><a href="#about">ABOUT THE LAB</a><a href="#visit">VISIT & CONTACT</a><button data-donate>DONATE <span aria-hidden="true">↗</span></button></nav></div><div class="footer-bottom"><span>A LITTLE MESS. A LOT OF POSSIBILITY.</span><span>WEBSITE DEMO · SAMPLE PROGRAMS & ILLUSTRATIVE PHOTOGRAPHY</span></div><div class="registration-frame" aria-hidden="true"><i></i><i></i><i></i><i></i></div></div><div class="color-strip" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span></div></footer>
   <div id="route-announcement" class="sr-only" role="status" aria-live="polite"></div>
 </body>
 </html>
