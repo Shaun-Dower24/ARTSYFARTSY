@@ -1,0 +1,12 @@
+{
+  "name": "artsy-fartsy-demo",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Interactive Artsy Fartsy website demo",
+  "scripts": {
+    "dev": "node scripts/serve.mjs",
+    "start": "node scripts/serve.mjs",
+    "check": "node --check dist/app.js && node --check scripts/serve.mjs"
+  }
+}

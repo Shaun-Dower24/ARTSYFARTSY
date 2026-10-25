@@ -1,0 +1,62 @@
+{
+  "version": 1,
+  "project": {
+    "name": "artsy-fartsy-demo",
+    "productType": null,
+    "stack": []
+  },
+  "sources": {
+    "tokens": [],
+    "components": [],
+    "assets": [],
+    "instructions": []
+  },
+  "design": {
+    "colorMode": "unknown",
+    "colors": {},
+    "typography": {},
+    "spacing": {},
+    "radius": {},
+    "shadows": {},
+    "motion": {},
+    "density": "unknown"
+  },
+  "components": {
+    "installed": [],
+    "preferredPrimitives": [],
+    "patterns": []
+  },
+  "constraints": {
+    "must": [
+      "Preserve supplied studio palette and serif/sans pairing",
+      "Keep Donate visible",
+      "Keep all six required visitor routes discoverable",
+      "Mark sample schedules/prices/photography",
+      "Forms send and store nothing; donations collect no payment",
+      "Preserve keyboard and reduced-motion behaviour"
+    ],
+    "avoid": [
+      "Unverified business facts or social proof",
+      "Framework migration for visual patterns alone",
+      "Heavy decorative animation",
+      "Carousels for essential navigation",
+      "Real payment or enquiry integrations in the demo"
+    ]
+  },
+  "decisions": [
+    {
+      "id": "approved-21st-patterns",
+      "decision": "Adapt the user-approved 21st shortlist with original HTML/CSS/JavaScript in the existing demo stack. Use two class audience image routes, shared metadata cards, grouped native navigation, contextual forms and native donation radio controls. No React catalog package is installed.",
+      "createdAt": "2026-10-25",
+      "source": "21st-Component-Review.md"
+    },
+    {
+      "id": "artsy-brand-and-demo-scope",
+      "decision": "Preserve the forest/teal, coral, yellow, mint and peach tokens in dist/styles.css, DM Serif Display headings and DM Sans body. Keep all programs illustrative and every form/payment outcome local-only.",
+      "createdAt": "2026-10-25",
+      "source": "Website-Design-UX-Checklist.md"
+    }
+  ],
+  "evidence": [],
+  "generatedAt": "2026-10-25T11:17:58.031Z"
+}
